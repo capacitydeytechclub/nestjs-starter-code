@@ -23,7 +23,7 @@ To run this project, you need the following installed:
 
 1. **Clone the repository:**
     ```bash
-    $ git clone https://github.com/capacitydeytechclub/team-beta-backend.git
+    $ git clone https://github.com/capacitydeytechclub/nestjs-starter-code.git
     ```
 2. **Change branch to backend-dev and install project dependencies:**
     ```bash
@@ -74,7 +74,7 @@ Contributions, issues, and feature requests should follow the below description.
 
 1. **After git clone, always make pull from `backend-staging` branch:**
     ```bash
-    $ git clone https://github.com/capacitydeytechclub/team-beta-backend.git
+    $ git clone https://github.com/capacitydeytechclub/nestjs-starter-code.git
     $ git fetch
     $ git checkout backend-staging
     ```
@@ -138,4 +138,4 @@ Contributions, issues, and feature requests should follow the below description.
 - [Docker](https://docs.docker.com/manuals)
 - [Git Commands](https://www.atlassian.com/git/glossary#commands)
 
-# team-beta-backend
+# nestjs-starter-code
