@@ -1,0 +1,65 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                  String                   @unique @default(uuid())
+  fullName            String
+  email               String                   @unique
+  password            String
+  accountVerification AccountVerificationStage
+  requestDelete       Boolean?                 @default(false)
+  userProfile         UserProfile?
+  adminProfile        AdminProfile?
+  isAdmin             Boolean                  @default(false)
+  createdAt           DateTime                 @default(now())
+  updatedAt           DateTime                 @updatedAt
+}
+
+model UserProfile {
+  id                 String                    @unique @default(uuid())
+  picture            String?
+  gender             Gender?
+  dob                DateTime?
+  phoneNumber        String?
+  agreedToTandC      Boolean                   @default(true)
+  userId             String                    @unique
+  user               User                      @relation(fields: [userId], references: [id])
+  createdAt          DateTime                  @default(now())
+  updatedAt          DateTime                  @updatedAt
+}
+
+model AdminProfile {
+  id              String           @unique @default(uuid())
+  userAccountType AdminAccountType
+  user            User             @relation(fields: [userId], references: [id])
+  userId          String           @unique
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+}
+
+enum Gender {
+  MALE
+  FEMALE
+}
+
+enum AdminAccountType {
+  SUPERADMIN
+  ADMIN
+}
+
+enum AccountVerificationStage {
+  PASSWORD_UPDATE_REQUIRED
+  EMAIL_VERIFICATION_REQUIRED
+  PROFILE_UPDATE_REQUIRED
+  SUSPENDED
+  VERIFIED
+}
