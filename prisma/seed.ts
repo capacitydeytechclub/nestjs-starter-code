@@ -7,11 +7,11 @@ async function main() {
   const hashedPassword = await argon.hash('Admin123');
 
   await prisma.user.upsert({
-    where: { email: 'admin@goelliteapp.com' },
+    where: { email: 'admin@test.com' },
     update: {},
     create: {
       fullName: 'Super Admin',
-      email: 'admin@goelliteapp.com',
+      email: 'admin@test.com',
       password: hashedPassword,
       accountVerification: AccountVerificationStage.VERIFIED,
       isAdmin: true,

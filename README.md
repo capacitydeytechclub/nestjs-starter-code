@@ -11,7 +11,7 @@
 
 ## Getting Started
 
-This is a Medical database sharing application.
+{description of the project}.
 
 ### Prerequisites
 
@@ -23,7 +23,7 @@ To run this project, you need the following installed:
 
 1. **Clone the repository:**
     ```bash
-    $ git clone https://github.com/capacitydeytechclub/nestjs-starter-code.git
+    $ git clone https://github.com/{url}
     ```
 2. **Change branch to backend-dev and install project dependencies:**
     ```bash
@@ -74,7 +74,7 @@ Contributions, issues, and feature requests should follow the below description.
 
 1. **After git clone, always make pull from `backend-staging` branch:**
     ```bash
-    $ git clone https://github.com/capacitydeytechclub/nestjs-starter-code.git
+    $ git clone https://github.com/{url}
     $ git fetch
     $ git checkout backend-staging
     ```
